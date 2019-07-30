@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-warning" >
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic font-weight-bold" style="color:#6e6e6e">My Blog Project</h1>
+      <p class="lead my-3 font-italic" style="color:#6e6e6e">영화 리뷰 블로그<br>by. Bae Yurim</p>
+    </div>
+</div>
+<div class="row">
+{% for i in blogs %}
+    <div class="col-lg-4">
+        <img src="{{ i.image.url }}" class="photo">
+        <h2>{{ i.title }}</h2>
+        <p>{{ i.summary }}</p>
+        <p><a class="btn btn-secondary" href="{% url 'detail' i.id %}" role="button">View details &raquo;</a></p>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<div class="card text-center">
+  <div class="card-header font-weight-bold">
+    {{ blog.title }}
+  </div>
+  <div class="card-body">
+    <img src="{{ blog.image.url }}" width="50%" height="80%">
+    <p class="card-text">{{ blog.body }}</p>
+  </div>
+  <div class="card-footer text-muted">
+    {{ blog.date }} &nbsp; by.{{ blog.writer }}
+  </div>
+</div>
+
+{% endblock %}

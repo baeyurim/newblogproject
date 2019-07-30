@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<form method="POST" enctype='multipart/form-data'>
+{% csrf_token %}
+{% load crispy_forms_tags %} 
+{{ form|crispy }}
+Image: <input type="file" name="image"> <br>
+
+<input class="btn btn-dark" type="submit" value="Post!">
+</form>
+
+{% endblock %}
